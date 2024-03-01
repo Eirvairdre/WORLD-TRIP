@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Alconica';
+  src: local('Alconica'),
+  url('../assets/Aclonica-Regular.ttf');
+  font-weight: auto;
+}

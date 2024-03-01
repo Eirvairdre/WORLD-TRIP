@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './components/index.css';
+import App from './components/App';
+import reportWebVitals from './components/reportWebVitals';
+import './assets/Aclonica-Regular.ttf'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
