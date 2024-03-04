@@ -18,3 +18,10 @@ code {
   url('../assets/Aclonica-Regular.ttf');
   font-weight: auto;
 }
+
+@font-face {
+  font-family: 'Roboto-Mono';
+  src: local('Roboto-Mono'),
+  url('../assets/RobotoMono-Regular.ttf');
+  font-weight: auto;
+}
