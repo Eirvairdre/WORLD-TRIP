@@ -3,19 +3,24 @@ import {ReactComponent as NA} from '../assets/north_america.svg';
 import {ReactComponent as SM} from '../assets/shared_map.svg';
 import './App.css';
 import Chart from '../Chart';
+import Navbar from "./navbar";
+import React, {useState} from 'react';
 
 function App() {
+
+
+
     return (
         <div className="App">
             <div className="FirstPage">
-
-                    <p>WORLD·TRIP</p>
+                <Navbar />
+                <p>WORLD·TRIP</p>
             </div>
             <div className="SecondPage">
-                    <h1>WORLD·TRIP</h1>
-                    <h2>is</h2>
-                    <p>
-                        a solo project with which you can mark your trips around the world, write descriptions of them and share them with friends and family.
+                <h1>WORLD·TRIP</h1>
+                <h2>is</h2>
+                <p>
+                    a solo project with which you can mark your trips around the world, write descriptions of them and share them with friends and family.
                     </p>
             </div>
             <div className="ThirdPage">

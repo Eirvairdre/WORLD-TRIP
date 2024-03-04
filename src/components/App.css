@@ -11,7 +11,7 @@
   /*background: linear-gradient(135deg, #004A8E, #120C1D, #610363);*/
 }
 .FirstPage {
-  height: 100vw;
+  height: 100vh;
   background-color: #161616;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
 }
 
 .SecondPage {
-  height: 100vw;
+  height: 100vh;
   background-color: rgba(22, 22, 22, 80%);
   display: flex;
   align-items: center;
@@ -70,12 +70,13 @@
 }
 
 .ThirdPage {
-  height: 100vw;
+  height: 100vh;
   background-color: rgba(22, 22, 22, 60%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  padding: 10em;
 }
 
 .ThirdPage h1 {
@@ -87,17 +88,18 @@
 }
 
 .Map {
-  padding-top: 20vw;
+  /*padding-top: 20vw;*/
   background-color: rgba(22, 22, 22, 0%);
 }
 
 .FourthPage {
-  height: 100vw;
+  height: 100vh;
   background-color: rgba(22, 22, 22, 40%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  padding: 10em;
 }
 
 .FourthPage h1 {
@@ -109,16 +111,16 @@
 }
 
 .NA {
-  padding-top: 20vw;
   background-color: rgba(22, 22, 22, 0%);
 }
 
 .FifthPage {
-  height: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  padding: 10em;
 }
 
 .FifthPage h1 {
@@ -130,6 +132,5 @@
 }
 
 .SM {
-  padding-top: 20vw;
   /*background-color: rgba(22, 22, 22, 0%);*/
 }
