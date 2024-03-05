@@ -6,16 +6,72 @@
   /*background: linear-gradient(135deg, #004A8E, #120C1D, #610363);*/
 }
 
+
 .App {
+  /*overflow-y: hidden;*/
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
   text-align: center;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  max-height: 100vh;
   /*background: linear-gradient(135deg, #004A8E, #120C1D, #610363);*/
 }
+
+.Child {
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  right: 1vw;
+  top: 1vh;
+  color: #ECECEC;
+  height: 5vh;
+  width: 5vw;
+}
+
+.nav {
+  width: 100%;
+  height: 5em;
+  background-color: #161616;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em;
+
+}
+
+.btn {
+  height: 100%;
+  width: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1;
+  background-color: #161616;
+}
+
+.burger-bar {
+  width: 4em;
+  height: 0.5em;
+  background-color: #FF7A00;
+  border-radius: 0.5em;
+}
+
 .FirstPage {
   height: 100vh;
   background-color: #161616;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  scroll-snap-align: start;
+  width: 100%;
+  text-align: center;
 }
 
 .FirstPage p {
@@ -23,8 +79,13 @@
   color: #FF7A00;
   font-family: 'Alconica';
   letter-spacing: calc(100 * .01em);
+  text-indent: calc(100 * .01em);
   font-size: clamp(20px, 5vw, 150px);
-  /*height: 7%;*/
+  text-align: center;
+}
+
+.Navbar {
+  left: 1000px;
 }
 
 .SecondPage {
@@ -34,10 +95,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.Desc {
-  /*margin-bottom: 5vw;*/
+  text-align: center;
 }
 
 .SecondPage h1 {
@@ -45,8 +103,9 @@
   color: #FF7A00;
   font-family: 'Alconica';
   letter-spacing: calc(100 * .01em);
+  text-indent: calc(100 * .01em);
   font-size: clamp(20px, 5vw, 150px);
-  /*height: 7%;*/
+  text-align: center;
   padding-bottom: 9vw;
 }
 
@@ -54,8 +113,10 @@
   background-color: rgba(22, 22, 22, 0%);
   color: #FF7A00;
   letter-spacing: calc(2 * .01em);
+  text-indent: calc(2 * .01em);
+  text-align: center;
   font-family: 'Roboto-Mono';
-  font-size: clamp(20px, 4vw, 100px);
+  font-size: clamp(25px, 4vw, 100px);
   padding-bottom: 9vw;
 }
 
@@ -63,10 +124,11 @@
   background-color: rgba(22, 22, 22, 0%);
   color: #ECECEC;
   letter-spacing: calc(2 * .01em);
+  text-indent: calc(2 * .01em);
   font-family: 'Roboto-Mono';
   font-size: clamp(15px, 2vw, 50px);
-  padding-left: 20vw;
-  padding-right: 20vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .ThirdPage {
@@ -74,9 +136,11 @@
   background-color: rgba(22, 22, 22, 60%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: center;*/
   flex-direction: column;
-  padding: 10em;
+  min-height: 100vh;
+  min-width: 100%;
+
 }
 
 .ThirdPage h1 {
@@ -84,12 +148,20 @@
   color: #FF7A00;
   font-family: 'Roboto-Mono';
   letter-spacing: calc(2 * .01em);
-  font-size: clamp(20px, 4vw, 100px);
+  font-size: clamp(40px, 4vw, 100px);
+  padding-top: 20vh;
+  padding-bottom: 5vh;
+  padding-right: 1vw;
+  padding-left: 1vw;
 }
 
 .Map {
-  /*padding-top: 20vw;*/
+  width: 100%;
+  height: 100%;
   background-color: rgba(22, 22, 22, 0%);
+  padding-bottom: 5vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
 }
 
 .FourthPage {
@@ -97,9 +169,10 @@
   background-color: rgba(22, 22, 22, 40%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: center;*/
   flex-direction: column;
-  padding: 10em;
+  min-height: 100vh;
+  min-width: 100%;
 }
 
 .FourthPage h1 {
@@ -107,20 +180,28 @@
   color: #FF7A00;
   font-family: 'Roboto-Mono';
   letter-spacing: calc(2 * .01em);
-  font-size: clamp(20px, 4vw, 100px);
+  font-size: clamp(50px, 4vw, 150px);
+  padding-top: 15vh;
+  padding-bottom: 5vh;
+  padding-right: 1vw;
+  padding-left: 1vw;
 }
 
 .NA {
   background-color: rgba(22, 22, 22, 0%);
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
 }
 
 .FifthPage {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  padding: 10em;
 }
 
 .FifthPage h1 {
@@ -128,9 +209,18 @@
   color: #FF7A00;
   font-family: 'Roboto-Mono';
   letter-spacing: calc(2 * .01em);
-  font-size: clamp(20px, 4vw, 100px);
+  font-size: clamp(40px, 4vw, 100px);
+  padding-top: 15vh;
+  padding-bottom: 5vh;
+  padding-right: 1vw;
+  padding-left: 1vw
 }
 
 .SM {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
   /*background-color: rgba(22, 22, 22, 0%);*/
 }
