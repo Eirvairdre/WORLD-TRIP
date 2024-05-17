@@ -1,12 +1,14 @@
+import React from "react";
 import './registration.css';
-import React, {useState} from "react";
 
-function Registraiton() {
+function Registration() {
     return(
         <div className='Registration_Page'>
-            Registration
+            <div className='Container'>
+                <p>Registration</p>
+            </div>
         </div>
     );
 }
 
-export default Registraiton;
+export default Registration;

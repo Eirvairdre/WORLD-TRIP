@@ -24,43 +24,36 @@
   position: relative;
 }
 
-.container {
-  position: absolute;
-  right: 1vw;
-  top: 1vh;
-  color: #ECECEC;
-  height: 5vh;
-  width: 5vw;
-}
+/*.container {*/
+/*  position: absolute;*/
+/*  right: 1vw;*/
+/*  top: 1vh;*/
+/*  color: #ECECEC;*/
+/*  height: 5vh;*/
+/*  width: 5vw;*/
+/*}*/
 
-.nav {
-  width: 100%;
-  height: 5em;
-  background-color: #161616;
-  display: flex;
-  justify-content: flex-start;
-  padding: 1em;
+/*.nav {*/
+/*  width: 100%;*/
+/*  height: 5em;*/
+/*  background-color: #161616;*/
+/*  display: flex;*/
+/*  justify-content: flex-start;*/
+/*  padding: 1em;*/
 
-}
+/*}*/
 
-.btn {
-  height: 100%;
-  width: 4em;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1;
-  background-color: #161616;
-}
-
-.burger-bar {
-  width: 4em;
-  height: 0.5em;
-  background-color: #FF7A00;
-  border-radius: 0.5em;
-}
+/*.btn {*/
+/*  height: 100%;*/
+/*  width: 4em;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: flex-start;*/
+/*  justify-content: space-between;*/
+/*  cursor: pointer;*/
+/*  z-index: 1;*/
+/*  background-color: #161616;*/
+/*}*/
 
 .FirstPage {
   height: 100vh;
@@ -74,7 +67,7 @@
   text-align: center;
 }
 
-.FirstPage p {
+.FPp {
   background-color: #161616;
   color: #FF7A00;
   font-family: 'Alconica';
@@ -84,9 +77,36 @@
   text-align: center;
 }
 
-.Navbar {
-  left: 1000px;
+.Registration {
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+  background-color: #161616;
 }
+
+.Reg_Btn {
+  background-color: #161616;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.Reg_Txt {
+  background-color: #FF7A00;
+  color: #161616;
+  font-family: 'Roboto Mono', monospace; /* Добавляем шрифт Roboto-Mono */
+  font-size: clamp(10px, 4vw, 35px); /* Используем vw для размера шрифта */
+  padding: 2vh 4vw; /* Используем vh и vw для padding */
+  border-radius: 0.5em;
+  display: flex; /* Используем flexbox внутри текстового контейнера */
+  align-items: center; /* Центрируем текст по вертикали */
+  justify-content: center; /* Центрируем текст по горизонтали */
+  white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+
+/*.Navbar {*/
+/*  left: 1000px;*/
+/*}*/
 
 .SecondPage {
   height: 100vh;
