@@ -1,0 +1,46 @@
+.Errors {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35vw;
+    margin-bottom: 2vh; /* Пространство между полями */
+}
+
+.InputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.Input {
+    width: 100%;
+    height: 4.5vh;
+    background-color: #1D1D1D;
+    color: #ECECEC;
+    outline: none;
+    padding: 1vh;
+    /*padding-right: 2.5em; !* Пространство для иконки *!*/
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    border: 0.15em solid transparent; /* Пустая рамка для устойчивости */
+}
+
+.EyeIcon {
+    position: absolute;
+    right: 0.5em; /* Позиционируем иконку немного левее от правого края */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #757575;
+}
+
+.ErrorTxt {
+    height: 1em; /* Устанавливает фиксированную высоту для сообщений об ошибке */
+    color: red;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    visibility: hidden; /* Сообщение об ошибке не занимает место, если его нет */
+}
+
+.ErrorTxt.error-visible {
+    visibility: visible; /* Сообщение об ошибке видно, если оно есть */
+}

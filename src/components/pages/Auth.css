@@ -1,0 +1,150 @@
+/*
+                Registration
+ */
+
+.Registration_Page {
+    background-color: #161616;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    text-align: center;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    scroll-snap-align: start;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.Container_ {
+    color: #ECECEC;
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(30px, 5vw, 150px);
+}
+
+.Return {
+    position: absolute;
+    margin: 5vw;
+}
+
+/*
+            Registration form
+*/
+
+.passwordContainer {
+    flex-direction: row;
+}
+
+.Eye {
+    position: absolute;
+    margin-left: -3em;
+    margin-top: 0.7em;
+    color: #757575;
+}
+
+.Name {
+    width: 35vw;
+    height: 4.5vh;
+    margin-bottom: 5vh;
+    background-color: #1D1D1D;
+    color: #ECECEC;
+    outline: none;
+    border: 0;
+    padding: 1vh;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+}
+
+.Email {
+    width: 35vw;
+    height: 4.5vh;
+    margin-bottom: 5vh;
+    background-color: #1D1D1D;
+    color: #ECECEC;
+    outline: none;
+    border: 0;
+    padding: 1vh;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+}
+
+.Password {
+    width: 35vw;
+    height: 4.5vh;
+    background-color: #1D1D1D;
+    color: #ECECEC;
+    outline: none;
+    border: 0;
+    margin-bottom: 5vh;
+    padding: 1vh;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+}
+
+/*
+                Register Button
+ */
+
+.cReg {
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+}
+
+.cReg_Btn {
+    background-color: #161616;
+    border: 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cReg_Txt {
+    background-color: #FF7A00;
+    color: #ECECEC;
+    font-family: 'Roboto Mono', monospace; /* Добавляем шрифт Roboto-Mono */
+    font-size: clamp(20px, 2vw, 20px); /* Используем vw для размера шрифта */
+    padding: 1.5vh 2vw; /* Используем vh и vw для padding */
+    border-radius: 0.5em;
+    display: flex; /* Используем flexbox внутри текстового контейнера */
+    align-items: center; /* Центрируем текст по вертикали */
+    justify-content: center; /* Центрируем текст по горизонтали */
+    white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.toLogin {
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+}
+
+.Btm_Txt {
+    color: #ECECEC;
+    /*margin-top: 5vh;*/
+    /*padding: 5vh;*/
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/*
+    Login
+*/
+
+.Login_Page {
+    background-color: #161616;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    text-align: center;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw;
+}
