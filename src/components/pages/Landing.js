@@ -14,7 +14,7 @@ export default function Home() {
                 <div className="FirstPage">
                     <p className='FPp'>WORLD·TRIP</p>
                     <div className='Registration'>
-                        <Link to='registation' className='Reg_Btn'>
+                        <Link to='login' replace={true} className='Reg_Btn'>
                             <p className='Reg_Txt'>CREATE YOUR MAP</p>
                         </Link>
                     </div>

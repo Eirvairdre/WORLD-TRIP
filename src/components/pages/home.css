@@ -4,81 +4,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
-}
-
-.map-container {
+    /*height: 100vh;*/
+    background-color: #161616;
+    width: 100vw;
+    /*color: #fff;*/
     position: relative;
-    width: 80vw;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /*padding: 1em;*/
 }
 
-.world-map {
+.WT {
     width: 100%;
-    height: auto;
-}
-
-.map-controls {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.zoom-button,
-.check-in-map,
-.check-in-here {
-    background-color: #444;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.menu {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-
-.username {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.menu-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1em;
-    padding: 10px 20px;
-    background-color: #444;
-    border-radius: 5px;
+    color: #ff7a00;
+    font-family: 'Alconica', monospace;
+    letter-spacing: calc(100 * .01em);
+    text-indent: calc(100 * .01em);
+    font-size: clamp(20px, 5vw, 150px);
+    text-align: center;
 }

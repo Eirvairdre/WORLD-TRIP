@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import './Auth.css';
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Close } from '../../assets/Close.svg';
 import Input from "../Input";
+import { AuthContext } from '../AuthContext';
 
 export default function Registration() {
     const [createName, setCreateName] = useState('');
@@ -12,45 +13,55 @@ export default function Registration() {
     const [errors, setErrors] = useState({ name: false, email: false, password: false });
 
     const navigate = useNavigate(); // Использование useHistory для перенаправления
-
-    const validation = () => {
+    const { login } = useContext(AuthContext);
+    const handleLogin = () => {
         let valid = true;
         setErrors({ name: false, email: false, password: false }); // Сброс ошибок
 
         if (!createEmail) {
-            handleError('пожалуйста, введите свой email', 'email');
+            handleError('Please, enter your email', 'email');
             valid = false;
-        } else if (!createEmail.match(/[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-z]+/)) {
-            handleError('пожалуйста, введите корректный email', 'email');
+        } else if (!createEmail.match(/[a-zA-Z0-9._-]+@[a-zA-Z]+\.[a-z]+/)) {
+            handleError('Please, enter a valid email', 'email');
             valid = false;
-        } else if (!createEmail.match(/^[A-Za-z0-9@.]+$/)) {
-            handleError('email должен содержать только латиницу и цифры', 'email');
+        } else if (!createEmail.match(/^[A-Za-z0-9@._-]+$/)) {
+            handleError('Email should contain only letters, numbers and special characters', 'email');
             valid = false;
         }
 
         if (!createName) {
-            handleError('пожалуйста, введите свое имя', 'name');
+            handleError('Please, enter your name', 'name');
+            valid = false;
+        } else if (createName.match(/^[A-Za-z0-9]+$/)) {
+            handleError('Your name should only consist of letters','name');
+            valid = false;
+        } else if (createName.length < 1) {
+            handleError('Your name should be longer than 2 letters', 'name');
             valid = false;
         }
 
         if (!createPassword) {
-            handleError('пожалуйста, введите свой пароль', 'password');
+            handleError('Please, enter your password', 'password');
             valid = false;
         }
 
         if (createPassword.length < 5) {
-            handleError('пароль должен содержать более 5 символов', 'password');
+            handleError('Your name should be longer than 5 letters', 'password');
             valid = false;
         } else if (!createPassword.match(/^[A-Za-z0-9]+$/)) {
-            handleError('пароль должен содержать только латиницу и цифры', 'password');
+            handleError('Your name should only consist of letters and numbers', 'password');
             valid = false;
         }
 
         if (valid) {
-            // Если валидация прошла успешно, перенаправляем пользователя на домашнюю страницу
-            navigate('/home');
+            login(); // Устанавливаем состояние аутентификации в true
+            navigate('/home', {replace: true}); // Перенаправляем на главную страницу
         }
     };
+
+    // const validation = () => {
+    //
+    // };
 
     const handleError = (errorMessage, input) => {
         setErrors(prevState => ({ ...prevState, [input]: errorMessage }));
@@ -87,7 +98,7 @@ export default function Registration() {
                     onFocus={() => handleError(null, 'password')}
                 />
                 <div className='cReg'>
-                    <button className='cReg_Btn' onClick={validation}>
+                    <button className='cReg_Btn' onClick={handleLogin}>
                         <p className='cReg_Txt'>Register</p>
                     </button>
                 </div>

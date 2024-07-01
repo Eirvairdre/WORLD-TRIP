@@ -1,0 +1,21 @@
+/* src/components/WorldMap.css */
+.map-container {
+    width: 100%;
+    /*height: 100vh; !* Занимает весь вертикальный размер экрана *!*/
+    display: flex;
+    justify-content: center; /* Центрирование карты горизонтально */
+    align-items: center; /* Центрирование карты вертикально */
+    margin-bottom: 5em;
+    /*overflow: hidden; !* Скрывает части SVG, которые выходят за пределы контейнера *!*/
+}
+
+.world-map {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Масштабирует SVG, чтобы оно полностью поместилось в контейнер, сохраняя пропорции */
+}
+
+.highlight {
+    fill: #ff7a00;
+    cursor: pointer;
+}

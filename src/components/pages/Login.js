@@ -1,8 +1,9 @@
 import './Auth.css';
-import React, {useState} from "react";
+import React, {useState, useContext } from "react";
 import {Link, useNavigate} from "react-router-dom";
 import { ReactComponent as Close } from '../../assets/Close.svg'
 import Input from "../Input";
+import { AuthContext } from '../AuthContext';
 
 export default function Login() {
     const [email, setEmail] = useState('')
@@ -12,29 +13,36 @@ export default function Login() {
     const [fail, setFail] = useState(false);
 
     const navigate = useNavigate();
+    const { login } = useContext(AuthContext);
 
-    const validation = async () => {
+    const handleRegister = () => {
+
         let valid = true;
+
         if (!email) {
-            handleError('пожалуйста, введите свой email', 'email');
+            handleError('Please, enter your email', 'email');
             valid = false;
         } else if (!email.match(/[a-zA-z0-9._-]+@[a-z]+\.[a-z]+/)) {
-            handleError('пожалуйста, введите корректный email', 'email');
+            handleError('Please, enter a valid email', 'email');
             valid = false;
         }
 
         if (!password) {
-            handleError('пожалуйста, введите свой пароль', 'password');
+            handleError('Please, enter your password', 'password');
             valid = false;
         } else if (fail) {
-            handleError('неверный логин или пароль', 'password');
+            handleError('Invalid username or password', 'password');
         }
 
         if (valid) {
-            // register();
-            navigate('/home')
+            login(); // Устанавливаем состояние аутентификации в true
+            navigate('/home', {replace: true}); // Перенаправляем на главную страницу
         }
     };
+
+    //     const validation = async () => {
+    //
+    // };
 
     const handleError = (errorMessage, input) => {
         setErrors(prevState => ({...prevState, [input]: errorMessage}));
@@ -70,7 +78,7 @@ export default function Login() {
                     }}
                 />
                 <div className='cReg'>
-                    <button className='cReg_Btn' onClick={validation}>
+                    <button className='cReg_Btn' onClick={handleRegister}>
                         <p className='cReg_Txt'>Sign in</p>
                     </button>
                 </div>

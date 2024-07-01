@@ -10,7 +10,7 @@
 
 
 .App {
-    /*overflow-y: hidden;*/
+    overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
     background-color: #012E40;
