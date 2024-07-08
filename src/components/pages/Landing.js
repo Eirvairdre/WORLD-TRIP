@@ -6,9 +6,9 @@ import {ReactComponent as Map} from '../../assets/world.svg';
 import {ReactComponent as NA} from '../../assets/north_america.svg';
 import {ReactComponent as SM} from '../../assets/shared_map.svg';
 
-
 export default function Home() {
     return (
+
         <div className="App">
             <section className="Child">
                 <div className="FirstPage">

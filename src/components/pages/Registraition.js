@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Close } from '../../assets/Close.svg';
 import Input from "../Input";
 import { AuthContext } from '../AuthContext';
+import { signUpRequest, signInRequest,} from '../../api/auth';
 
 export default function Registration() {
     const [createName, setCreateName] = useState('');
@@ -32,9 +33,6 @@ export default function Registration() {
         if (!createName) {
             handleError('Please, enter your name', 'name');
             valid = false;
-        } else if (createName.match(/^[A-Za-z0-9]+$/)) {
-            handleError('Your name should only consist of letters','name');
-            valid = false;
         } else if (createName.length < 1) {
             handleError('Your name should be longer than 2 letters', 'name');
             valid = false;
@@ -45,7 +43,7 @@ export default function Registration() {
             valid = false;
         }
 
-        if (createPassword.length < 5) {
+        if (createPassword.length < 6) {
             handleError('Your name should be longer than 5 letters', 'password');
             valid = false;
         } else if (!createPassword.match(/^[A-Za-z0-9]+$/)) {
@@ -54,14 +52,33 @@ export default function Registration() {
         }
 
         if (valid) {
-            login(); // Устанавливаем состояние аутентификации в true
-            navigate('/home', {replace: true}); // Перенаправляем на главную страницу
+            register()
         }
     };
 
     // const validation = () => {
     //
     // };
+
+    const register = async () => {
+        try {
+            await signUpRequest(createEmail, createName, createPassword);
+            await localStorage.setItem('@world-trip:name', createName);
+            const r = await signInRequest(createPassword, createEmail);
+            try {
+                await localStorage.setItem('@world-trip:token', r.token);
+                console.log(r.token);
+            } catch (err) {
+                console.error(err);
+            }
+            // navigation.navigate('Slider');
+            login();
+            navigate('/home');
+        } catch (err) {
+            console.error(err);
+            // setFail(true);
+        }
+    };
 
     const handleError = (errorMessage, input) => {
         setErrors(prevState => ({ ...prevState, [input]: errorMessage }));

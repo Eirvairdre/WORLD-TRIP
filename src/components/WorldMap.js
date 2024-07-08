@@ -17,17 +17,22 @@ const WorldMap = () => {
 
         const handleMouseEnter = (e) => {
             if (e.target.tagName === 'path') {
-                e.target.classList.add('highlight');
+                const id = e.target.getAttribute('id');
+                const paths = document.querySelectorAll(`path[id='${id}']`);
+                paths.forEach(path => path.classList.add('highlight'));
             }
         };
 
         const handleMouseLeave = (e) => {
             if (e.target.tagName === 'path') {
-                e.target.classList.remove('highlight');
+                const id = e.target.getAttribute('id');
+                const paths = document.querySelectorAll(`path[id='${id}']`);
+                paths.forEach(path => path.classList.remove('highlight'));
             }
         };
 
         const handleClick = (e) => {
+            console.log('CLICK!')
             if (e.target.tagName === 'path') {
                 const countryId = e.target.getAttribute('id') || 'Unknown country';
                 alert(`You clicked on ${countryId}`);

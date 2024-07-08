@@ -110,7 +110,7 @@
     background-color: #FF7A00;
     color: #ECECEC;
     font-family: 'Roboto Mono', monospace; /* Добавляем шрифт Roboto-Mono */
-    font-size: clamp(20px, 2vw, 20px); /* Используем vw для размера шрифта */
+    font-size: clamp(25px, 2vw, 20px); /* Используем vw для размера шрифта */
     padding: 1.5vh 2vw; /* Используем vh и vw для padding */
     border-radius: 0.5em;
     display: flex; /* Используем flexbox внутри текстового контейнера */

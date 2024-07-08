@@ -16,7 +16,7 @@ export default function Login() {
     const { login } = useContext(AuthContext);
 
     const handleRegister = () => {
-
+        console.log('start logging in')
         let valid = true;
 
         if (!email) {
@@ -32,9 +32,16 @@ export default function Login() {
             valid = false;
         } else if (fail) {
             handleError('Invalid username or password', 'password');
+        } else if (!password.match(/^[A-Za-z0-9]+$/)) {
+            handleError('Please, enter a valid password', 'password');
+            valid = false;
+        } else if (password.length < 6) {
+            handleError('Your name should be longer than 5 letters', 'password');
+            valid = false;
         }
 
         if (valid) {
+            console.log('logged in')
             login(); // Устанавливаем состояние аутентификации в true
             navigate('/home', {replace: true}); // Перенаправляем на главную страницу
         }
@@ -82,7 +89,7 @@ export default function Login() {
                         <p className='cReg_Txt'>Sign in</p>
                     </button>
                 </div>
-                <Link to='/registation' className='toLogin'>
+                <Link to='/registration' className='toLogin'>
                     <p className='Btm_Txt'>
                         I don't have account
                     </p>
