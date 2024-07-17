@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import { ReactComponent as Close } from '../../assets/Close.svg'
 import Input from "../Input";
 import { AuthContext } from '../AuthContext';
+import {signInRequest} from "../../api/auth";
 
 export default function Login() {
     const [email, setEmail] = useState('')
@@ -41,15 +42,30 @@ export default function Login() {
         }
 
         if (valid) {
-            console.log('logged in')
-            login(); // Устанавливаем состояние аутентификации в true
-            navigate('/home', {replace: true}); // Перенаправляем на главную страницу
+            register()
         }
     };
 
     //     const validation = async () => {
     //
     // };
+
+    const register = async () => {
+        try {
+            const r = await signInRequest(email, password);
+            try {
+                await localStorage.setItem('@world-trip:token', r.access_token);
+                console.log(r.access_token);
+            } catch (err) {
+                console.error(err);
+            }
+            login();
+            navigate('/home');
+        } catch (err) {
+            console.error(err);
+            setFail(true)
+        }
+    };
 
     const handleError = (errorMessage, input) => {
         setErrors(prevState => ({...prevState, [input]: errorMessage}));

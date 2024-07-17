@@ -15,12 +15,12 @@ const signUpRequest = async (name, email, password) => {
     }
 };
 
-const signInRequest = async (password, username) => {
-    const r = await axios.post(`${baseUrl}/token`, {
+const signInRequest = async (username, password) => {
+    const r = await axios.post(`${baseUrl}/login/`, {
+        email: username,
         password: password,
-        username: username,
     });
-    if (r.status === 201) {
+    if (r.status === 200) {
         return r.data;
     } else {
         throw Error('Неверный логин или пароль');

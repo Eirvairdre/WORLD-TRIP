@@ -12,6 +12,7 @@ export default function Registration() {
     const [createPassword, setCreatePassword] = useState('');
     const [passwordType, setPasswordType] = useState('password');
     const [errors, setErrors] = useState({ name: false, email: false, password: false });
+    const [fail, setFail] = useState(false)
 
     const navigate = useNavigate(); // Использование useHistory для перенаправления
     const { login } = useContext(AuthContext);
@@ -50,7 +51,6 @@ export default function Registration() {
             handleError('Your name should only consist of letters and numbers', 'password');
             valid = false;
         }
-
         if (valid) {
             register()
         }
@@ -62,12 +62,12 @@ export default function Registration() {
 
     const register = async () => {
         try {
-            await signUpRequest(createEmail, createName, createPassword);
+            // await signUpRequest(createName, createEmail, createPassword);
             await localStorage.setItem('@world-trip:name', createName);
-            const r = await signInRequest(createPassword, createEmail);
+            const r = await signUpRequest(createName, createEmail, createPassword);
             try {
-                await localStorage.setItem('@world-trip:token', r.token);
-                console.log(r.token);
+                await localStorage.setItem('@world-trip:token', r.access_token);
+                // console.log(r.access_token);
             } catch (err) {
                 console.error(err);
             }
@@ -128,3 +128,4 @@ export default function Registration() {
         </div>
     );
 }
+

@@ -120,8 +120,8 @@
 }
 
 .toLogin {
-    position: absolute;
-    bottom: 5vh;
+    /*position: absolute;*/
+    margin-top: 15vh;
     width: 100%;
 }
 
