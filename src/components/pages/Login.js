@@ -46,10 +46,6 @@ export default function Login() {
         }
     };
 
-    //     const validation = async () => {
-    //
-    // };
-
     const register = async () => {
         try {
             const r = await signInRequest(email, password);

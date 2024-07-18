@@ -14,7 +14,7 @@ export default function Registration() {
     const [errors, setErrors] = useState({ name: false, email: false, password: false });
     const [fail, setFail] = useState(false)
 
-    const navigate = useNavigate(); // Использование useHistory для перенаправления
+    const navigate = useNavigate();
     const { login } = useContext(AuthContext);
     const handleLogin = () => {
         let valid = true;
@@ -56,13 +56,8 @@ export default function Registration() {
         }
     };
 
-    // const validation = () => {
-    //
-    // };
-
     const register = async () => {
         try {
-            // await signUpRequest(createName, createEmail, createPassword);
             await localStorage.setItem('@world-trip:name', createName);
             const r = await signUpRequest(createName, createEmail, createPassword);
             try {
@@ -71,12 +66,10 @@ export default function Registration() {
             } catch (err) {
                 console.error(err);
             }
-            // navigation.navigate('Slider');
             login();
             navigate('/home');
         } catch (err) {
             console.error(err);
-            // setFail(true);
         }
     };
 

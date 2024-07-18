@@ -1,4 +1,3 @@
-/* Home.css */
 .home-page {
     display: flex;
     flex-direction: column;
@@ -7,9 +6,7 @@
     height: 100vh;
     background-color: #161616;
     width: 100vw;
-    /*color: #fff;*/
     position: relative;
-    /*padding: 1em;*/
 }
 
 .WT {

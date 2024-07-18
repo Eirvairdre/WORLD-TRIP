@@ -9,6 +9,7 @@ import Landing from './pages/Landing';
 import Registration from './pages/Registraition';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './ProtectedRoute';
 import './App.css';
@@ -28,7 +29,7 @@ function App() {
                                 <ProtectedRoute element={<Home />} />
                             }
                         />
-                        <Route path="*" element={<Navigate to="/" />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>
             </BrowserRouter>

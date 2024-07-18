@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import './WorldMap.css';
 import { colorUpdate, getComment, getMap, updateCountryComment } from "../api/countryUpdate";
 
-// Установите корневой элемент приложения для доступности
 Modal.setAppElement('#root');
 
 const WorldMap = () => {

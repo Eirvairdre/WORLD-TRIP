@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 60vw;
-    margin-bottom: 2vh; /* Пространство между полями */
+    margin-bottom: 2vh;
 }
 
 .InputWrapper {
@@ -18,15 +18,14 @@
     color: #ECECEC;
     outline: none;
     padding: 1vh;
-    /*padding-right: 2.5em; !* Пространство для иконки *!*/
     font-family: 'Roboto Mono', monospace;
     font-size: 1em;
-    border: 0.15em solid transparent; /* Пустая рамка для устойчивости */
+    border: 0.15em solid transparent;
 }
 
 .EyeIcon {
     position: absolute;
-    right: 0.5em; /* Позиционируем иконку немного левее от правого края */
+    right: 0.5em;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -34,13 +33,13 @@
 }
 
 .ErrorTxt {
-    height: 1em; /* Устанавливает фиксированную высоту для сообщений об ошибке */
+    height: 1em;
     color: red;
     font-family: 'Roboto Mono', monospace;
     font-size: 1em;
-    visibility: hidden; /* Сообщение об ошибке не занимает место, если его нет */
+    visibility: hidden;
 }
 
 .ErrorTxt.error-visible {
-    visibility: visible; /* Сообщение об ошибке видно, если оно есть */
+    visibility: visible;
 }

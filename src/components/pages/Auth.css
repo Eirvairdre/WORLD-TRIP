@@ -109,26 +109,23 @@
 .cReg_Txt {
     background-color: #FF7A00;
     color: #ECECEC;
-    font-family: 'Roboto Mono', monospace; /* Добавляем шрифт Roboto-Mono */
-    font-size: clamp(25px, 2vw, 20px); /* Используем vw для размера шрифта */
-    padding: 1.5vh 2vw; /* Используем vh и vw для padding */
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(25px, 2vw, 20px);
+    padding: 1.5vh 2vw;
     border-radius: 0.5em;
-    display: flex; /* Используем flexbox внутри текстового контейнера */
-    align-items: center; /* Центрируем текст по вертикали */
-    justify-content: center; /* Центрируем текст по горизонтали */
-    white-space: nowrap; /* Запрещаем перенос текста */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 
 .toLogin {
-    /*position: absolute;*/
     margin-top: 15vh;
     width: 100%;
 }
 
 .Btm_Txt {
     color: #ECECEC;
-    /*margin-top: 5vh;*/
-    /*padding: 5vh;*/
     text-decoration: none;
     display: inline-block;
     font-family: 'Roboto Mono', monospace;

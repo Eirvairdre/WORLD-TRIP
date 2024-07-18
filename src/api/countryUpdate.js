@@ -1,4 +1,3 @@
-// File: countryUpdate.js
 import axios from "axios";
 import baseUrl from './base';
 

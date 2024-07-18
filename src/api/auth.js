@@ -27,27 +27,4 @@ const signInRequest = async (username, password) => {
     }
 };
 
-// const deleteRequest = async token => {
-//     const r = await axios.delete(`${baseUrl}/delete`, {
-//         token: token,
-//     });
-//     if (r.status === 204) {
-//         return r.data;
-//     } else {
-//         throw Error('Internal error');
-//     }
-// };
-//
-// const updateRequest = async (email, name, password) => {
-//     const r = await axios.patch(`${baseUrl}/patch`, {
-//         email: email,
-//         name: name,
-//         password: password,
-//     });
-//     if (r.status === 204) {
-//         return r.data;
-//     } else {
-//         throw Error('Internal error');
-//     }
-// };
 export { signInRequest, signUpRequest}
