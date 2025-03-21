@@ -1,3 +1,3 @@
-const baseUrl = 'https://world-trip.online:8000';
-export const baseStorageUrl = 'https://storage.keepfood.aa12.ml/';
+const baseUrl = '';
+export const baseStorageUrl = '';
 export default baseUrl;
